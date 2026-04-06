@@ -1,22 +1,29 @@
 import React from 'react'; 
 import './App.css';
-import Row from './row';
-import request from './request';
+import Row from './Row';
+import requests from "./requests";
+import Banner from './Banner';
+
+/* ... other imports ... */
 
 function App() {
   return (
     <div className="App">
-      <h1>Hey bonagua-netflix-clone! Let's build a Netflix Clone Front-end today</h1>
-      <Row  title="NETFLIX ORIGINALS" fetchUrl={request.fetchNetflixOriginals } />
-      <Row  title="TRENDING" fetchUrl={request.fetchTrending } />
+      {/* Nav Bar */}
+      <Banner />
+      
+      {/* Corrected Row Tag below - Remove the extra <Row from line 12 */}
+      <Row 
+        title="NETFLIX ORIGINALS" 
+        fetchUrl={requests.fetchNetflixOriginals} 
+        isLargeRow={true} 
+      />
 
-      <Row  title="TOP RATED" fetchUrl={request.fetchTopRated } />
-      <Row  title="ACTION MOVIES" fetchUrl={request.fetchActionMovies } />
-      <Row  title="COMEDY MOVIES" fetchUrl={request.fetchComedyMovies } />
-      <Row  title="HORROR MOVIES" fetchUrl={request.fetchHorrorMovies } />
-     
+      <Row title="TRENDING" fetchUrl={requests.fetchTrending} />
+      <Row title="TOP RATED" fetchUrl={requests.fetchTopRated} />
+      {/* ... rest of your rows ... */}
+    </div>
   );
 }
 
 export default App;
-
