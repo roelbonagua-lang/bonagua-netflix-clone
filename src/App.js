@@ -1,22 +1,22 @@
-import React from 'react'; 
-import './App.css';
-import Row from './row'; // Fixed: Changed 'Row' to 'row' to match your file name
-import requests from "./Requests";
-import Banner from './Banner';
-import Nav from './Nav';
+import React from "react";
+import "./App.css";
+import Row from "./Row";
+import requests from "./requests";
+import Banner from "./Banner";
+import Nav from "./Nav";
 
 function App() {
   return (
     <div className="App">
       {/* Added Nav here so it displays at the top of your page */}
       <Nav />
-      
+
       <Banner />
-      
-      <Row 
-        title="NETFLIX ORIGINALS" 
-        fetchUrl={requests.fetchNetflixOriginals} 
-        isLargeRow={true} 
+
+      <Row
+        title="NETFLIX ORIGINALS"
+        fetchUrl={requests.fetchNetflixOriginals}
+        isLargeRow={true}
       />
 
       <Row title="TRENDING" fetchUrl={requests.fetchTrending} />
